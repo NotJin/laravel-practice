@@ -8,8 +8,9 @@ use Illuminate\Support\Facades\DB;
 
 class BookController extends Controller
 {
-    public function home(){
-        $data = book::all();
-        return view("layout", compact("data"));
+    public function home(Request $request){
+        $search = $request->get('search');
+        $data = Book::with('Author')->Search($search)->orderBy('id','desc')->paginate(20);
+        return view("layout", compact('data'));
     }
 }

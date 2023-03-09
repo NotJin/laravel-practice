@@ -17,4 +17,17 @@ class book extends Model
         "authorid",
         "delete_at",
     ];
+
+
+    public function Author() {
+        return $this->belongsTo(Author::class);
+    }
+
+    public function scopeSearch($query, $search)
+    {
+        if ($search && $search != "") {
+            return $query->where("title", "like", "%$search%");
+        }
+        return $query;
+    }
 }

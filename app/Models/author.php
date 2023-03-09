@@ -13,4 +13,9 @@ class author extends Model
         "name",
         "delete_at",
     ];
+
+
+    public function Books() {
+        return $this->hasMany(Book::class);
+    }
 }
