@@ -10,6 +10,6 @@ class BookController extends Controller
 {
     public function home(){
         $data = book::all();
-        return view("layout");
+        return view("layout", compact("data"));
     }
 }
