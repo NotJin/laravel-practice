@@ -20,12 +20,10 @@
         </thead>
         <tbody>
             <tr>
-                @foreach($data as $item)
                 <td>Alfreds Futterkiste</td>
                 <td>Maria Anders</td>
                 <td>Germany</td>
                 <td>Germany</td>
-                @endforeach
             </tr>
             <tr>
                 <td>Centro comercial Moctezuma</td>
